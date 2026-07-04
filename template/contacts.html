@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+     {% include "header.html" %}
+
+
+<body>
+
+     <!-- START Wrapper -->
+     <div class="wrapper">
+
+          <div class="main-nav">
+               <div class="d-flex justify-content-between main-logo-box">
+                    <div class="logo-box d-flex align-items-center">
+                         <a href="/index" class="logo-dark text-decoration-none d-flex align-items-center">
+                              <i data-lucide="address-book" class="me-2"></i>
+                              <span class="fw-bold fs-4">ContactCMS</span>
+                         </a>
+                    </div>
+                    <!-- Menu Toggle Button -->
+                    <button type="button" class="btn btn-link d-flex button-sm-hover button-toggle-menu" aria-label="Show Full Sidebar">
+                         <i data-lucide="menu" class="button-sm-hover-icon"></i>
+                    </button>
+               </div>
+
+               <div class="h-100" data-simplebar>
+                    {% include "sidebar.html" %}                 
+               </div>
+          </div>
+
+          <header class="topbar d-flex">
+               <div class="container-fluid">
+                    <div class="navbar-header">
+                         {%include "topbar.html"%}
+                    </div>
+               </div>
+          </header>
+
+          <div class="page-container">
+
+               <!-- Start Container Fluid -->
+               <div class="page-content">
+                    <div class="row">
+                         
+
+                         <div >
+                              <div class="card">
+                                   <div class="card-body">
+                                        <div class="d-flex align-items-center gap-3">
+                                             <div>
+                                                  <p class="card-title mb-0"> Contacts</p>
+                                             </div>
+                                             <a href="/add" >Add Contacts ➕</i></a>
+                                          
+                                        </div>
+                                   </div>
+                              </div>
+                         </div>
+                    </div>
+
+                    <div class="row">
+                         <div class="col-xl-12">
+                              <div class="card">
+                                   <div class="card-header d-flex justify-content-between align-items-center">
+                                        <div>
+                                             <p class="card-title mb-0">Customers</p>
+                                        </div>
+                                    
+                                   </div>
+
+                                   <div class="">
+                                        <div class="table-responsive">
+                                             <table class="table align-middle mb-0 table-hover table-centered">
+                                                  <thead class="bg-light-subtle">
+                                                       <tr>
+                                                            <th>Customer Name</th>
+                                                            <th>Contact No.</th>
+                                                            <th>Action</th>
+                                                       </tr>
+                                                  </thead>
+                                                  <tbody>
+                                                       {%for dt in contact %}
+                                                       <tr>
+                                                            <td>{{dt.name}}  {{dt.lastname}}</td>
+                                                            <td>{{dt.mobile_number}}</td>
+                                                            <td>
+                                                                 <div class="d-flex gap-3">
+                                                                      <a href="/update/{{ dt.id }}" class="text-muted"><i data-lucide="square-pen" class="align-middle fs-20"></i></a>
+                                                                      <a href="/delete/{{ dt.id }}" class="text-muted"><i data-lucide="trash-2" class="align-middle fs-20"></i></a>
+                                                                 </div>
+                                                            </td>
+                                                       </tr>
+                                                       {% endfor %}                                                    
+                                                  </tbody>
+                                             </table>
+                                        </div>
+                                        <!-- end table-responsive -->
+                                   </div>
+                                   
+                              </div>
+                         </div>
+                    </div>
+               </div>
+               <!-- End Page Content -->
+
+               <!-- ========== Footer Start ========== -->
+               <footer class="footer">
+                   <div class="container">
+                       <div class="row">
+                           <div class="col-12 text-center">
+                               <script>document.write(new Date().getFullYear())</script> &copy; Velok. All rights reserved by FoxPixel</a>
+                           </div>
+                       </div>
+                   </div>
+               </footer>
+               <!-- ========== Footer End ========== -->
+          </div>
+          <!-- END Wrapper -->
+
+          <script src="assets/js/vendor.js"></script>
+          <script src="assets/js/app.js"></script>
+
+</body>
+
+
+<!-- Mirrored from foxpixel.vercel.app/velok/contacts.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 06 Mar 2026 07:37:50 GMT -->
+</html>

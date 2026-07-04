@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+     {% include "header.html" %}
+
+
+<body>
+
+     <!-- START Wrapper -->
+     <div class="wrapper">
+
+          <div class="main-nav">
+               <div class="d-flex justify-content-between main-logo-box">
+                    <!-- Sidebar Logo -->
+                    <div class="logo-box d-flex align-items-center">
+                         <a href="/index" class="logo-dark text-decoration-none d-flex align-items-center">
+                              <i data-lucide="address-book" class="me-2"></i>
+                              <span class="fw-bold fs-4">ContactCMS</span>
+                         </a>
+                    </div>
+                    <!-- Menu Toggle Button -->
+                    <button type="button" class="btn btn-link d-flex button-sm-hover button-toggle-menu" aria-label="Show Full Sidebar">
+                         <i data-lucide="menu" class="button-sm-hover-icon"></i>
+                    </button>
+               </div>
+
+               <div class="h-100" data-simplebar>
+                         {% include "sidebar.html" %}
+                  
+               </div>
+          </div>
+
+          <header class="topbar d-flex">
+               <div class="container-fluid">
+                    <div class="navbar-header">
+
+                     
+                         {% include "topbar.html" %}
+                                                     
+
+                       
+                         </div>
+                    </div>
+               </div>
+          </header>
+
+          <div class="page-container">
+
+               <!-- Start Container Fluid -->
+               <div class="page-content">
+                    <!-- Start here.... -->
+                    <div class="col-8 "  style="margin-top:200px; margin-left:300px">
+                         <div>
+                              <div class="card" >
+                                   <div class="card-body">
+                                        <h4 class="fw-semibold">Application Design </h4>
+                                        <p class="mb-0" >The app has advanced, signaling the need to finalize our application for the upcoming phase of development. This crucial step ensures alignment with our objectives and user expectations.</p>
+                                   </div>
+                              </div>
+                         </div>
+                    </div>
+               </div>
+               <!-- End Container Fluid -->
+
+               <!-- ========== Footer Start ========== -->
+           
+               <!-- ========== Footer End ========== -->
+
+          </div>
+          
+     </div>
+     <!-- END Wrapper -->
+
+     <script src="assets/js/vendor.js"></script>
+     <script src="assets/js/app.js"></script>
+     
+</body>
+
+
+<!-- Mirrored from foxpixel.vercel.app/velok/todo.html by HTTrack Website Copier/3.x [XR&CO'2014], Fri, 06 Mar 2026 07:37:50 GMT -->
+</html>
