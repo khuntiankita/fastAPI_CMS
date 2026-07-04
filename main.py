@@ -73,7 +73,7 @@ async def view_contact_get(request: Request,db:Session = Depends(get_db)):
 def add_data(request:Request,name:Annotated[str,Form()],lastname:Annotated[str,Form()],mobile_number:Annotated[int,Form()],db:Session=Depends(get_db)):
     db.add(basemodel.Contact(name=name,lastname=lastname,mobile_number=mobile_number))
     db.commit()
-    return RedirectResponse(url="/contact" status_code=303)
+    return RedirectResponse(url="/contact", status_code=303)
 
 
 @app.get("/update/{u_id}")
@@ -89,10 +89,10 @@ async def update_data(u_id:int,request:Request,name:Annotated[str,Form()],lastna
     contact_item.lastname = lastname
     contact_item.mobile_number = mobile_number
     db.commit()
-    return RedirectResponse(url="/contact" status_code=303)
+    return RedirectResponse(url="/contact", status_code=303)
 @app.get("/delete/{d_id}")
 async def del_contact(request:Request,d_id:int,db:Session = Depends(get_db)):
     query=db.query(basemodel.Contact).filter(basemodel.Contact.id == d_id).first()
     db.delete(query)
     db.commit()
-    return RedirectResponse(url="/contact" status_code=303)
+    return RedirectResponse(url="/contact", status_code=303)
