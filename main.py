@@ -25,7 +25,7 @@ def get_db():
 
 
 @app.get("/index")
-async def view_index(request: Request, db: Session = Depends(get_db)):
+async def view_home(request: Request, db: Session = Depends(get_db)):
     contacts = db.query(basemodel.Contact).all()
 
     return tmp.TemplateResponse(
